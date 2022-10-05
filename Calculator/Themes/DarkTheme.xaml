@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.Themes.DarkTheme">
+
+    <Color x:Key="PageBackgroundColor">Black</Color>
+    <Color x:Key="NavigationBarColor">#33364f</Color>
+    <Color x:Key="PrimaryColor">#2b2d42</Color>
+    <Color x:Key="SecondaryColor">#56596b</Color>
+    <Color x:Key="PrimaryTextColor">White</Color>
+    <Color x:Key="SecondaryTextColor">White</Color>
+    <Color x:Key="TertiaryTextColor">White</Color>
+    <Color x:Key="TransparentColor">Transparent</Color>
+    <Color x:Key="EqualToColor">#9d4edd</Color>
+
+</ResourceDictionary>
