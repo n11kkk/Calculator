@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.AppShell"
+             xmlns:local="clr-namespace:Calculator"
+             Shell.FlyoutBehavior="Flyout">
+    
+    <FlyoutItem Title="Basic Math" >
+        <ShellContent
+            Title="Basic Math"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="FirstPage"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Complex Math" >
+        <ShellContent
+            Title="Complex Math"
+            ContentTemplate="{DataTemplate local:CueMathPage}"
+            Route="SecondPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="About" >
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate local:About}"
+            Route="AboutPage" />
+    </FlyoutItem>
+
+    <MenuItem Text="Light Mode" Clicked="OnLight"/>
+    <MenuItem Text="Dark Mode" Clicked="OnDark"/>
+    <MenuItem Text="Pink Mode" Clicked="OnPink"/>
+    <MenuItem Text="Green Mode" Clicked="OnGreen"/>
+
+</Shell>
