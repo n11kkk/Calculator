@@ -10,117 +10,119 @@ public partial class MainPage : ContentPage
 
     }
 
-    string currentEntry = "";
-    int currentState = 1;
-    string mathOperator;
-    double firstNumber, secondNumber;
-    string decimalFormat = "N0";
-    
-    
-
-    void OnSelectNumber(object sender, EventArgs e)
+    async Task<string> Docal()
     {
-    
+        var client = new HttpClient();
+
+        string plusChanged = currentEntry1.Replace("+", "%2B");
+
+        System.Diagnostics.Debug.WriteLine($"{plusChanged}");
+
+        string httpApi = $"http://api.mathjs.org/v4/?expr={plusChanged}";
+
+        System.Diagnostics.Debug.WriteLine($"tHIS IS PLUS{httpApi}");
+
+        var response = await client.GetAsync(httpApi);
+
+        var responseString = await response.Content.ReadAsStringAsync();
+
+
+
+        if (responseString.StartsWith("Error"))
+        {
+            System.Diagnostics.Debug.WriteLine("There is an error");
+            return "Err";
+        }
+        else
+        {
+            System.Diagnostics.Debug.WriteLine(responseString);
+            this.currentCalculation1.Text = responseString;
+            return responseString.ToString();
+        }
+
+
+    }
+
+
+    void OnHit(object sender, EventArgs e)
+    {
+
+        Docal().ToString();
+
+
+    }
+
+    public void OnSelected1(object sender, EventArgs e)
+    {
         Button button = (Button)sender;
         string pressed = button.Text;
 
-        currentEntry += pressed;
 
-        if ((this.resultText.Text == "0" && pressed == "0")
-            || (currentEntry.Length <= 1 && pressed != "0")
-            || currentState < 0)
+        if (currentEntry1.Length < 1)
         {
-            this.resultText.Text = "";
-            if (currentState < 0)
-                currentState *= -1;
-        }
-
-        if (pressed == "." && decimalFormat != "N2")
-        {
-            decimalFormat = "N2";
-        }
-
-        this.resultText.Text += pressed;
-    }
-
-    void OnSelectOperator(object sender, EventArgs e)
-    {
-        LockNumberValue(resultText.Text);
-
-        currentState = -2;
-        Button button = (Button)sender;
-        string pressed = button.Text;
-        mathOperator = pressed;            
-    }
-
-    private void LockNumberValue(string text)
-    {
-        double number;
-        if (double.TryParse(text, out number))
-        {
-            if (currentState == 1)
+            if (pressed != "+" && pressed != "*" && pressed != "/")
             {
-                firstNumber = number;
+                currentEntry1 = pressed;
+                this.resultText1.Text = pressed;
+            }
+        }
+
+        else
+        {
+            System.Diagnostics.Debug.WriteLine($"This is the Last{currentEntry1[currentEntry1.Length - 1]}");
+
+            if (currentEntry1[currentEntry1.Length - 1] == '+' || currentEntry1[currentEntry1.Length - 1] == '-' || currentEntry1[currentEntry1.Length - 1] == '*' || currentEntry1[currentEntry1.Length - 1] == '/')
+            {
+                if (pressed != "+" && pressed != "-" && pressed != "*" && pressed != "/")
+                {
+                    currentEntry1 += pressed;
+                    this.resultText1.Text += pressed;
+                }
+
             }
             else
             {
-                secondNumber = number;
+                currentEntry1 += pressed;
+                this.resultText1.Text += pressed;
             }
 
-            currentEntry = string.Empty;
         }
+
+        System.Diagnostics.Debug.WriteLine("Later");
+        System.Diagnostics.Debug.WriteLine(currentEntry1);
+        System.Diagnostics.Debug.WriteLine(this.resultText1.Text);
+
     }
+
+
+
+
+    string currentEntry1 = "";
+
+
+
 
     void OnClear(object sender, EventArgs e)
     {
-        firstNumber = 0;
-        secondNumber = 0;
-        currentState = 1;
-        decimalFormat = "N0";
-        this.resultText.Text = "0";
-        currentEntry = string.Empty;
+
+        this.resultText1.Text = "0";
+        currentEntry1 = string.Empty;
     }
 
-    void OnCalculate(object sender, EventArgs e)
-    {
-        if (currentState == 2)
-        {
-            if(secondNumber == 0)
-                LockNumberValue(resultText.Text);
-
-            double result = Calculator.Calculate(firstNumber, secondNumber, mathOperator);
-
-            this.CurrentCalculation.Text = $"{firstNumber} {mathOperator} {secondNumber}";
-
-            this.resultText.Text = result.ToTrimmedString(decimalFormat);
-            firstNumber = result;
-            secondNumber = 0;
-            currentState = -1;
-            currentEntry = string.Empty;
-        }
-    }    
-
-    void OnNegative(object sender, EventArgs e)
-    {
-        if (currentState == 1)
-        {
-            secondNumber = -1;
-            mathOperator = "×";
-            currentState = 2;
-            OnCalculate(this, null);
-        }
-    }
 
     void OnPercentage(object sender, EventArgs e)
     {
-        if (currentState == 1)
+
+
+        if (currentEntry1.Length > 0)
         {
-            LockNumberValue(resultText.Text);
-            decimalFormat = "N2";
-            secondNumber = 0.01;
-            mathOperator = "×";
-            currentState = 2;
-            OnCalculate(this, null);
+            if (currentEntry1[currentEntry1.Length - 1] != '+' || currentEntry1[currentEntry1.Length - 1] != '-' || currentEntry1[currentEntry1.Length - 1] != '*' || currentEntry1[currentEntry1.Length - 1] != '/')
+            {
+                currentEntry1 += "*0.01";
+                this.resultText1.Text += "*0.01";
+
+            }
         }
+
     }
 }
