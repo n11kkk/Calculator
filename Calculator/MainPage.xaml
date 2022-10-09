@@ -57,7 +57,7 @@
               Clicked="OnSelected1" />
         <Button Text="0" Grid.Row="5" Grid.Column="1" 
               Clicked="OnSelected1" />
-        <Button Text="." Grid.Row="5" Grid.Column="2" 
+        <Button Text="." Grid.Row="1" Grid.Column="1" 
               Clicked="OnSelected1" />
 
         <Button Text="/" Grid.Row="1" Grid.Column="3"
@@ -71,7 +71,7 @@
 
 
 
-        <Button Text="=" Grid.Row="5" Grid.Column="3" 
+        <Button Text="=" Grid.Row="5" Grid.Column="2" 
                Clicked="OnHit" />
 
     </Grid>
