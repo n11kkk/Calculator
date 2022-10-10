@@ -16,4 +16,10 @@
             ContentTemplate="{DataTemplate local:ComplexMathPage}"
             Route="ComplexMathPage"/>
     </FlyoutItem>
+    <FlyoutItem Title="About !">
+        <ShellContent
+            Title="Team info"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Route="AboutPage"/>
+    </FlyoutItem>
 </Shell>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.AboutPage"
+            >
+    <VerticalStackLayout>
+        <Label 
+            FontSize="Header"
+            Padding="10"
+            Text="Team Members"
+            VerticalOptions="Center" 
+            
+/>
+        <BoxView HeightRequest="1"
+                VerticalOptions="End"
+               />
+        <Label 
+           
+            Padding="10"
+           
+            Text="1. Nikilesh Samba Murthy - G856U646"
+            VerticalOptions="Center" />
+        <Label 
+           
+            Padding="10"
+         
+            Text="2. Kartheek Meda - U759A296"
+            VerticalOptions="Center" 
+ />
+
+        <Label 
+         
+            Padding="10"
+          
+            Text="3. Mounica bobba - G557C728"
+            VerticalOptions="Center"  />
+
+    </VerticalStackLayout>
+</ContentPage>
