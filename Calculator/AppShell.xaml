@@ -10,4 +10,10 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="BasicMathPage"/>
     </FlyoutItem>
+    <FlyoutItem Title="Complex Math">
+        <ShellContent
+            Title="Complex Math"
+            ContentTemplate="{DataTemplate local:ComplexMathPage}"
+            Route="ComplexMathPage"/>
+    </FlyoutItem>
 </Shell>
