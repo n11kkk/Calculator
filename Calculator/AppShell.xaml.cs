@@ -1,3 +1,5 @@
+using Calculator.Themes;
+
 namespace Calculator;
 
 public partial class AppShell : Shell
@@ -6,4 +8,27 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 	}
+    void OnDark(object sender, EventArgs e)
+    {
+        ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+        if (mergedDictionaries != null)
+        {
+            mergedDictionaries.Clear();
+
+            mergedDictionaries.Add(new DarkTheme());
+
+        }
+    }
+
+    void OnLight(object sender, EventArgs e)
+    {
+        ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+        if (mergedDictionaries != null)
+        {
+            mergedDictionaries.Clear();
+
+            mergedDictionaries.Add(new LightTheme());
+
+        }
+    }
 }

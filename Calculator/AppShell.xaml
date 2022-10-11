@@ -22,4 +22,7 @@
             ContentTemplate="{DataTemplate local:AboutPage}"
             Route="AboutPage"/>
     </FlyoutItem>
+
+    <MenuItem Text="Light Mode" Clicked="OnLight"/>
+    <MenuItem Text="Dark Mode" Clicked="OnDark"/>
 </Shell>
