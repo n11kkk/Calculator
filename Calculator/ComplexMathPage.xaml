@@ -4,13 +4,13 @@
              x:Class="Calculator.ComplexMathPage">
     
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
-          RowDefinitions="2*,*,*,*,*,*,*"
+          RowDefinitions="2*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*,*">
 
         <Label x:Name="currentCalculation1"
                FontSize="22"
                LineBreakMode="NoWrap"
-               Grid.ColumnSpan="4"
+               Grid.ColumnSpan="5"
                Text=""
                HorizontalTextAlignment="End"
                VerticalTextAlignment="Start"
@@ -20,7 +20,7 @@
                FontSize="64" FontAttributes="Bold" Text="0"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
-               LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+               LineBreakMode="NoWrap" Grid.ColumnSpan="5" />
 
         <BoxView BackgroundColor="{StaticResource LightGray}" HeightRequest="1"
                  Grid.Row="0" VerticalOptions="End"
