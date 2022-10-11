@@ -14,3 +14,5 @@ He created the ‘Extend Page’ UI which contains the additional operations i.e
   
 Mounica’s contribution towards the project:  
 She was involved in the UI creation i.e., theme of the background colour in dark mode and green mode and involved in creating the report for the corresponding project. These requirements are done by our group members: G856U646, U75A296, G557C728.  
+
+![Basic Math Page](/Calculator/Resources/Images/1.png)  
