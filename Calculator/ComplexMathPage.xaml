@@ -5,7 +5,7 @@
     
     <Grid Padding="16" RowSpacing="2" ColumnSpacing="2"
           RowDefinitions="2*,*,*,*,*,*"
-          ColumnDefinitions="*,*,*,*,*">
+          ColumnDefinitions="*,*,*,*,*" BackgroundColor="{DynamicResource NavigationBarColor}">
 
         <Label x:Name="currentCalculation1"
                FontSize="22"
@@ -14,74 +14,76 @@
                Text=""
                HorizontalTextAlignment="End"
                VerticalTextAlignment="Start"
-               Grid.Row="0"/>
+               Grid.Row="0"
+               Style="{StaticResource LargeLabelStyle}"/>
 
         <Label x:Name="resultText1"
                FontSize="64" FontAttributes="Bold" Text="0"
                HorizontalTextAlignment="End"
                VerticalTextAlignment="End"
-               LineBreakMode="NoWrap" Grid.ColumnSpan="5" />
+               LineBreakMode="NoWrap" Grid.ColumnSpan="5" 
+               Style="{StaticResource LargeLabelStyle}"/>
 
-        <BoxView BackgroundColor="{StaticResource LightGray}" HeightRequest="1"
+        <BoxView  Color="{DynamicResource TertiaryTextColor}" HeightRequest="1"
                  Grid.Row="0" VerticalOptions="End"
                  Grid.ColumnSpan="5"
                  />
 
         <Button Text="C" Grid.Row="1" Grid.Column="0"
-               Clicked="OnClear" />
+               Clicked="OnClear" Style="{StaticResource ButtonStyle}" BackgroundColor="{DynamicResource EqualToColor}"/>
         <Button Text="%" Grid.Row="1" Grid.Column="2"
-               Clicked="OnPercentage" />
+               Clicked="OnPercentage" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="7" Grid.Row="2" Grid.Column="0"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="8" Grid.Row="2" Grid.Column="1"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="9" Grid.Row="2" Grid.Column="2"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="4" Grid.Row="3" Grid.Column="0"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="5" Grid.Row="3" Grid.Column="1"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="6" Grid.Row="3" Grid.Column="2"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="1" Grid.Row="4" Grid.Column="0"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="2" Grid.Row="4" Grid.Column="1"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="3" Grid.Row="4" Grid.Column="2"
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="00" Grid.Row="5" Grid.Column="0" 
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="0" Grid.Row="5" Grid.Column="1" 
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="." Grid.Row="1" Grid.Column="1" 
-              Clicked="OnSelected1" />
+              Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="/" Grid.Row="1" Grid.Column="3"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="*" Grid.Row="2" Grid.Column="3"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="-" Grid.Row="3" Grid.Column="3"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text="+" Grid.Row="4" Grid.Column="3"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
 
 
         <Button Text="=" Grid.Row="5" Grid.Column="2" 
-               Clicked="OnHit" />
+               Clicked="OnHit" Style="{StaticResource ButtonStyle}"/>
 
         <Button Text="√	" Grid.Row="1" Grid.Column="4"
-            Clicked="OnSqrt"/>
+            Clicked="OnSqrt" Style="{StaticResource ButtonStyle}"/>
         <Button Text="mod" Grid.Row="2" Grid.Column="4"
-             Clicked="onMod"  />
+             Clicked="onMod"  Style="{StaticResource ButtonStyle}"/>
         <Button Text="(" Grid.Row="3" Grid.Column="4"
-               Clicked="OnSelected1"/>
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
         <Button Text=")" Grid.Row="4" Grid.Column="4"
-               Clicked="OnSelected1" />
+               Clicked="OnSelected1" Style="{StaticResource ButtonStyle}"/>
 
     </Grid>
 </ContentPage>

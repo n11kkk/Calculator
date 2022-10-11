@@ -3,35 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.AboutPage"
             >
-    <VerticalStackLayout>
+    <VerticalStackLayout BackgroundColor="{DynamicResource NavigationBarColor}">
         <Label 
             FontSize="Header"
             Padding="10"
             Text="Team Members"
             VerticalOptions="Center" 
+            TextColor="{DynamicResource EqualToColor}"
             
 />
         <BoxView HeightRequest="1"
                 VerticalOptions="End"
+                Color="{DynamicResource TertiaryTextColor}"
                />
         <Label 
-           
+            TextColor="{DynamicResource EqualToColor}"
             Padding="10"
-           
+             Style="{StaticResource MediumLabelStyle}"
             Text="1. Nikilesh Samba Murthy - G856U646"
             VerticalOptions="Center" />
         <Label 
-           
+            TextColor="{DynamicResource EqualToColor}"
             Padding="10"
-         
+            Style="{StaticResource MediumLabelStyle}"
             Text="2. Kartheek Meda - U759A296"
             VerticalOptions="Center" 
  />
 
         <Label 
-         
+            TextColor="{DynamicResource EqualToColor}"
             Padding="10"
-          
+             Style="{StaticResource MediumLabelStyle}"
             Text="3. Mounica bobba - G557C728"
             VerticalOptions="Center"  />
 
