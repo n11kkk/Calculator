@@ -21,5 +21,8 @@
     <MauiXaml Update="Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Themes\PinkTheme.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
   </ItemGroup>
 </Project>
