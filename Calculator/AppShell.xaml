@@ -25,4 +25,5 @@
 
     <MenuItem Text="Light Mode" Clicked="OnLight"/>
     <MenuItem Text="Dark Mode" Clicked="OnDark"/>
+    <MenuItem Text="Green Mode" Clicked="OnGreen"/>
 </Shell>

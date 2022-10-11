@@ -31,4 +31,16 @@ public partial class AppShell : Shell
 
         }
     }
+
+    void OnGreen(object sender, EventArgs e)
+    {
+        ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+        if (mergedDictionaries != null)
+        {
+            mergedDictionaries.Clear();
+
+            mergedDictionaries.Add(new GreenTheme());
+
+        }
+    }
 }
