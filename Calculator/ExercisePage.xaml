@@ -8,38 +8,76 @@
             Text="Reload Questions"
             Clicked="OnClickedNewExercise"
             VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            Style="{StaticResource ButtonStyle}"/>
+        <BoxView  Color="{DynamicResource TertiaryTextColor}" HeightRequest="1"
+                 Grid.Row="0" VerticalOptions="End"
+                 Grid.ColumnSpan="5"
+                 />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label
+            Text="Question ("
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+               Style="{StaticResource LargeLabelStyle}"
+              />
+            <Label x:Name="Count" 
+            Text="1"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+               Style="{StaticResource LargeLabelStyle}"
+              />
+            <Label
+            Text=")"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+               Style="{StaticResource LargeLabelStyle}"
+              />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
 
-        <Label x:Name="FirstNumber" 
+            <Label x:Name="FirstNumber" 
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center"
+               Style="{StaticResource LargeLabelStyle}"
               />
             <Label x:Name="Operator"
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
+               Style="{StaticResource LargeLabelStyle}"
              />
             <Label x:Name="SecondNumber"
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
+               Style="{StaticResource LargeLabelStyle}"
               />
-    
+        </HorizontalStackLayout>
         <Button x:Name="Option1"
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-                Clicked="OnClickCorrect"/>
+                Clicked="OnClickCorrect"
+                 Style="{StaticResource ButtonStyle}"
+                FontSize="Large"
+                BackgroundColor="{DynamicResource EqualToColor}"/>
         <Button x:Name="Option2"
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-                Clicked="OnClickCorrect"/>
+                Clicked="OnClickCorrect"
+                 Style="{StaticResource ButtonStyle}"
+                FontSize="Large"
+                 BackgroundColor="{DynamicResource EqualToColor}"/>
         <Button x:Name="Option3"
             Text=""
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-                Clicked="OnClickCorrect"/>
+                Clicked="OnClickCorrect"
+                 Style="{StaticResource ButtonStyle}"
+                FontSize="Large"
+                 BackgroundColor="{DynamicResource EqualToColor}"/>
     </VerticalStackLayout>
 </ContentPage>
