@@ -31,7 +31,13 @@ public partial class ExercisePage : ContentPage
         public int[][]? Options { get; set; }
 
     }
-    async Task<T> GetExercise()
+    public static class Global
+    {
+        public static Exercise fullResponse = new Exercise{ };
+
+        public static int questionNumber = 0;
+    }
+    async Task<Exercise> GetExercise()
     {
 
         try
@@ -54,6 +60,16 @@ public partial class ExercisePage : ContentPage
     }
 
 
-   
+    async void OnClickedNewExercise(object sender, EventArgs e)
+    {
+        var response = await GetExercise();
+        Global.questionNumber = 0;
+        if (response != null)
+        {
+            Global.fullResponse = response;
+            System.Diagnostics.Debug.WriteLine(response.FirstNum[Global.questionNumber]);
+        }
+        //System.Diagnostics.Debug.WriteLine(response);
     }
+    
 }
