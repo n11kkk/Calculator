@@ -21,8 +21,14 @@
             Title="Team info"
             ContentTemplate="{DataTemplate local:AboutPage}"
             Route="AboutPage"/>
+    
     </FlyoutItem>
-
+    <FlyoutItem Title="Exercises">
+        <ShellContent
+            Title="Exercise"
+            ContentTemplate="{DataTemplate local:ExercisePage}"
+            Route="ExercisePage"/>
+    </FlyoutItem>
     <MenuItem Text="Light Mode" Clicked="OnLight"/>
     <MenuItem Text="Dark Mode" Clicked="OnDark"/>
     <MenuItem Text="Green Mode" Clicked="OnGreen"/>
