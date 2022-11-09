@@ -33,7 +33,7 @@ public partial class ExercisePage : ContentPage
     }
     public static class Global
     {
-        public static Exercise fullResponse = new Exercise{ };
+        public static Exercise fullResponse = new Exercise { };
 
         public static int questionNumber = 0;
     }
@@ -78,4 +78,49 @@ public partial class ExercisePage : ContentPage
         //System.Diagnostics.Debug.WriteLine(response);
     }
 
+    async void OnClickCorrect(object sender, EventArgs e)
+    {
+        Button button = (Button)sender;
+        string pressed = button.Text;
+
+
+
+        if (pressed == Global.fullResponse.Answers[Global.questionNumber].ToString())
+        {
+            System.Diagnostics.Debug.WriteLine("Correct");
+            await DisplayAlert("Congratulations", "This is the right answer", "Next Question");
+            Global.questionNumber++;
+            if (Global.questionNumber >= 10)
+            {
+                var response = Global.fullResponse;
+                bool newExercise = await DisplayAlert("Exercise done!", "Load new Exercises?", "Yes !! more Math please !", "Nah, retry current questions ");
+                if (newExercise)
+                {
+                    response = await GetExercise();
+                }
+                Global.questionNumber = 0;
+                if (response != null)
+                {
+                    Global.fullResponse = response;
+                    System.Diagnostics.Debug.WriteLine(response.FirstNum[Global.questionNumber]);
+                    FirstNumber.Text = $"{response.FirstNum[Global.questionNumber]}";
+                    Operator.Text = $"{response.Operators[Global.questionNumber]}";
+                    SecondNumber.Text = $"{response.SecondNum[Global.questionNumber]}";
+                    Option1.Text = $"{response.Options[Global.questionNumber][0]}";
+                    Option2.Text = $"{response.Options[Global.questionNumber][1]}";
+                    Option3.Text = $"{response.Options[Global.questionNumber][2]}";
+                }
+
+            }
+            System.Diagnostics.Debug.WriteLine(Global.questionNumber);
+            FirstNumber.Text = $"{Global.fullResponse.FirstNum[Global.questionNumber]}";
+            Operator.Text = $"{Global.fullResponse.Operators[Global.questionNumber]}";
+            SecondNumber.Text = $"{Global.fullResponse.SecondNum[Global.questionNumber]}";
+            Option1.Text = $"{Global.fullResponse.Options[Global.questionNumber][0]}";
+            Option2.Text = $"{Global.fullResponse.Options[Global.questionNumber][1]}";
+            Option3.Text = $"{Global.fullResponse.Options[Global.questionNumber][2]}";
+
+        }
+
+    }
 }
