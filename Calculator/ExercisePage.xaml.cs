@@ -68,8 +68,14 @@ public partial class ExercisePage : ContentPage
         {
             Global.fullResponse = response;
             System.Diagnostics.Debug.WriteLine(response.FirstNum[Global.questionNumber]);
+            FirstNumber.Text = $"{response.FirstNum[Global.questionNumber]}";
+            Operator.Text = $"{response.Operators[Global.questionNumber]}";
+            SecondNumber.Text = $"{response.SecondNum[Global.questionNumber]}";
+            Option1.Text = $"{response.Options[Global.questionNumber][0]}";
+            Option2.Text = $"{response.Options[Global.questionNumber][1]}";
+            Option3.Text = $"{response.Options[Global.questionNumber][2]}";
         }
         //System.Diagnostics.Debug.WriteLine(response);
     }
-    
+
 }
