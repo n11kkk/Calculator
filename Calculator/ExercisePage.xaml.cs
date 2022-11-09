@@ -31,6 +31,27 @@ public partial class ExercisePage : ContentPage
         public int[][]? Options { get; set; }
 
     }
+    async Task<T> GetExercise()
+    {
+
+        try
+        {
+
+            var response = await _client.GetAsync(ExerciseApi);
+            string respString = await response.Content.ReadAsStringAsync();
+            var finalResp = JsonSerializer.Deserialize<Exercise>(respString, _serializerOptions);
+
+            System.Diagnostics.Debug.WriteLine(finalResp);
+            return finalResp;
+        }
+        catch (HttpRequestException h)
+        {
+            System.Diagnostics.Debug.WriteLine(h);
+        }
+
+        return null;
+
+    }
 
 
    
